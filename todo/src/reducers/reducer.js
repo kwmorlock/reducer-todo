@@ -14,12 +14,51 @@ const reducer = {state, action} => {
                 ...state,
                 editing: true
             }
+            case 'MARK_TODO':
+                return {
+                    ...state,
+                    editing: true
+                }
     }
 }
 
 const addTodo = () => {
     const [state, dispatch] = useReducer(reducer, initialState)
     const [newTodo, setNewTodo] = useState('');
-    const handleChanges = e => 
+    const handleChanges = e => {
+        setNewTodo(e.target.value);
+    };
+    return (
+        <div>
+            {!state.editing ? (
+                <h1>
+            {state.todo}{''}
+            <i
+            onClick={() => dispatch({type: 'ADD_TODO'})}
+            className='far fa-edit'
+            />
+            </h1>
+            ) : (
+                <div>
+            <input>
+            className='todo-input'
+            type='text'
+            name='newTodoText'
+            value={newTodoText}
+            onChange={handleChanges}
+            
+            </input>
+        </div>
+        <button
+        onClick={() =>
+            dispatch({ type: 'MARK_TODO', payload: newTodoText})
+        }
+        >
+         Mark Todo
+        </button>
+        </div>
+    );
 
-}
+};
+
+export default Reducer;
