@@ -20,7 +20,7 @@ import {v4 as uuidv4} from 'uuid';
 
 const TodoForm = (props) => {
    const [newTodoText, setNewTodoText] = useState("");
-   
+
    const handleChanges =(e) => {
        e.preventDefault();
        setNewTodoText(e.target.value);
@@ -44,7 +44,10 @@ onClick={(e) => {
 >
     add
     </button>
-    <button onClick={handleChanges}>Clear</button>
+    <button onClick={(e) => {
+        e.preventDefault()
+        props.dispatch({type: 'CLEAR_TODO'})
+    }} >Clear</button>
        </form>
    );
     };

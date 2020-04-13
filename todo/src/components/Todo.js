@@ -56,7 +56,7 @@ const Todo = props => {
 
 
     return (
-    <p onClick={() => props.dispatch({type: 'MARK_TODO', payload: props.todo.id}) } className= {props.todo.completed ? "strike" : ""} >{props.todo.task}</p>
+    <p onClick={() => props.dispatch({type: 'MARK_TODO', payload: props.todo.id}) } className= {props.todo.completed ? "strike" : ""} >{props.todo.item}</p>
     );
   }
 
