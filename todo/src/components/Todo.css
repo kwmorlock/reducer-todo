@@ -1,0 +1,17 @@
+
+.strike {
+    text-decoration: line-through;
+}
+
+body {
+    background-color: hotpink;
+    display:flex;
+    justify-content: center;
+    margin-top: 15%;
+}
+
+p {
+    color: purple;
+    font-size: 3rem;
+}
+
